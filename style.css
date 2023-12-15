@@ -1,0 +1,231 @@
+/* 07/12/2023 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+/* Header */
+header {
+    width: 100vw;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #131313;
+    padding: 15px 20px;
+    position: relative;
+}
+
+nav .logo {
+    color: #fff;
+}
+
+nav .navItems a {
+    color: #fff;
+    text-decoration: none;
+    border: 1px solid transparent;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 1.1rem;
+    transition: .3s;
+}
+
+nav .navItems a:hover {
+    border-color: #b7b7b7;
+    background-color: #5c5a5abd;
+}
+
+nav #navMenu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #222222;
+    padding: 10px;
+}
+
+nav #navMenu a {
+    display: block;
+    margin: 5px auto;
+    width: 80%;
+    text-align: center;
+}
+
+nav #navMenu {
+    display: none;
+}
+
+#menuBtn {
+    color: #fff;
+    text-decoration: none;
+    border: 1px solid transparent;
+    padding: 5px 7px;
+    border-radius: 4px;
+    font-size: 1.7rem;
+    transition: .3s;
+    cursor: pointer;
+    display: none;
+}
+
+#menuBtn:hover {
+    border-color: #b7b7b7;
+    background-color: #5c5a5abd;
+}
+
+
+/* Main */
+main {
+    width: 100vw;
+    background-color: #ecf0f1;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 30px;
+    min-height: 85vh;
+}
+
+main section {
+    flex: 1 1 250px;
+    border-radius: 10px;
+}
+
+main section textarea {
+    width: 100%;
+    min-height: 300px;
+    height: 100%;
+    max-height: 450px;
+    display: block;
+    border-radius: 5px;
+    font-size: 1.3rem;
+    padding: 10px;
+    outline: none;
+    resize: none;
+}
+
+/* Output */
+main .output {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.box {
+    border-radius: 3px;
+    box-shadow: 0 1px 3px #666565;
+    background-color: #fff;
+}
+
+.box > .heading {
+    color: #fff;
+    padding: 7px 11px;
+    cursor: default;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top-right-radius: 3px;
+    border-top-left-radius: 3px;
+}
+
+.box:first-child > .heading {
+    background-color: #21ba45;
+}
+
+.box:last-child > .heading {
+    background-color: #c10015;
+}
+
+.box > .heading span {
+    padding: 3px;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: .2s;
+    position: relative;
+}
+
+.box > .heading span:hover {
+    background-color: #e9e9e9ba;
+}
+
+.box .copy {
+    z-index: -3;
+    width: 100%;
+    height: 100%;
+}
+
+.box .copy::before {
+    content: 'Copied!';
+    position: absolute;
+    bottom: 120%;
+    right: -5%;
+    font-size: 0.9rem;
+    background-color: #313131;
+    padding: 7px 9px;
+    border-radius: 4px;
+    font-family: sans-serif;
+    z-index: 1;
+}
+
+/* .box > .heading span:hover::before {
+    content: 'Copy to Clipboard';
+    position: absolute;
+    bottom: 120%;
+    right: -5%;
+    font-size: 0.9rem;
+    background-color: #313131;
+    padding: 7px 9px;
+    border-radius: 4px;
+    font-family: sans-serif;
+    z-index: 1;
+}
+
+.box > .heading span:hover::after, */
+.box .copy::after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #313131;
+    bottom: 110%;
+    right: 30%;
+    transform: rotate(45deg);
+}
+
+.box > p {
+    padding: 23px 13px;
+}
+
+
+/* Utility Classes */
+.ns {
+    user-select: none;
+}
+
+
+/* BREAKPOINTS */
+@media screen and (max-width: 800px) {
+    main {
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 599px) {
+    nav {
+        padding: 10px 15px;
+    }
+
+    nav #navItems {
+        display: none;
+    }
+
+    nav #navMenu.toggleMenu {
+        display: block;
+    }
+
+    #menuBtn {
+        display: block;
+    }
+}
